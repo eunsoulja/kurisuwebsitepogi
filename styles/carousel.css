@@ -1,0 +1,93 @@
+/* developers: ALCHE-style curved carousel. UI chrome */
+.dv-n{margin:0 0 10px;font:11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.dv-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;position:relative;z-index:3}
+.dv-top h2{margin:0;font-size:clamp(36px,min(5vw,8svh),68px);letter-spacing:-.045em}
+.dv-conn{display:inline-flex;align-items:center;gap:9px;margin-bottom:8px;padding:7px 12px;border:1px solid var(--line);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.dv-conn i{width:7px;height:7px;border-radius:50%;background:#747f8d;box-shadow:0 0 10px currentColor}
+.dv-conn[data-s=live] i,.dv-conn[data-s=partial] i{background:#3ba55d}
+.dv-conn[data-s=off] i{background:#ed4245}
+.dv-shell{width:min(1600px,100%);margin:0 auto;padding:0 clamp(22px,5vw,84px);position:relative}
+.dv-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;position:relative;z-index:5;margin-top:-2px}
+.dv-info{min-width:0;max-width:720px}
+.dv-who{display:flex;align-items:center;gap:14px}
+.dv-av{position:relative;flex:none;width:48px;height:48px;border-radius:50%;background:#151515}
+.dv-av img,.dv-av .ini{width:100%;height:100%;border-radius:50%;object-fit:cover;display:grid;place-items:center;font:700 20px var(--gro)}
+.dv-av b{position:absolute;right:-2px;bottom:-2px;width:13px;height:13px;border-radius:50%;border:3px solid #050505}
+.dv-meta{font:10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.dv-name{margin:3px 0 0;font-size:clamp(25px,3.2vw,42px);line-height:1;letter-spacing:-.035em;overflow-wrap:anywhere}
+.dv-sub{margin:12px 0 0;color:var(--mute);font-size:13px;min-height:1em}
+.dv-controls{display:flex;flex-direction:column;align-items:flex-end;gap:15px;font:11px var(--mono);color:var(--mute)}
+.dv-dots{display:flex;gap:8px}
+.dv-dots button{width:28px;height:2px;padding:0;border:0;background:var(--line);cursor:pointer;transition:background .25s,width .25s}
+.dv-dots button[aria-current=true]{width:42px;background:var(--ink)}
+.dv-count{letter-spacing:.14em}
+.dv-info.in>*{animation:dvin .55s cubic-bezier(.2,.7,.2,1) both}
+@keyframes dvin{from{opacity:0;transform:translateY(12px)}}
+.dv-arrow{display:none!important}
+.tg{display:inline-block;margin:10px 8px 0 0;padding:3px 9px;border:1px solid var(--line);font:10px var(--mono);color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* journey: Home > curved card ring > Developers > About on one pinned, scroll-driven timeline */
+.jn{position:relative;z-index:2;height:600svh}
+.jn-st{--cy:49%;position:sticky;top:0;height:100svh;min-height:620px;overflow:hidden}
+.jn-st .hero{position:absolute;inset:0;height:100%;min-height:0}
+.jn-bg{position:absolute;inset:0;overflow:hidden;background:#050505;opacity:0;pointer-events:none}
+.jn-mk{position:absolute;left:0;top:100svh;width:1px;height:1px;pointer-events:none}
+.cy,.cy-lay{position:absolute;inset:0}
+.cy-lay{opacity:0;pointer-events:none}
+.cy .dv-stage{position:absolute;inset:0;margin:0;perspective:1500px;perspective-origin:50% var(--cy);transform-style:flat;outline:none;touch-action:pan-y}
+.cy-world{position:absolute;left:50%;top:var(--cy);width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.dv-deck{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d}
+.cy-lit{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 66% at 50% var(--cy),transparent 38%,rgba(5,5,5,.72)),linear-gradient(rgba(5,5,5,.62),transparent 20%,transparent 66%,rgba(5,5,5,.92))}
+.cy .dv-shell{position:absolute;inset:0;height:100%;margin:auto;padding:0;pointer-events:none}
+.cy .dv-top{position:absolute;left:clamp(22px,5vw,84px);right:clamp(22px,5vw,84px);top:88px}
+.cy .dv-bottom{position:absolute;left:clamp(22px,5vw,84px);right:clamp(22px,5vw,84px);bottom:64px;margin:0}
+.cy .dv-info,.cy .dv-controls,.cy .dv-conn{pointer-events:auto}
+/* background: blurred copy of the active art (halo), bloom, tile wall */
+.hz{--hw:1900px;--hh:1070px;position:absolute;inset:0;overflow:hidden;filter:blur(7px) saturate(2.2) brightness(.62)}
+.hz canvas{position:absolute;left:50%;top:var(--cy);width:var(--hw);height:var(--hh);opacity:0;will-change:transform,opacity}
+.bloom{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(ellipse 36% 42% at 50% var(--cy),rgba(var(--acc,111,134,255),.42),rgba(var(--acc,111,134,255),.1) 55%,transparent 78%)}
+#wall{position:absolute;inset:0;width:100%;height:100%}
+/* card: 16 strips bent on a cylinder arc (see bend()). Strips overlap 2px so no seams show. */
+.dv-card{position:absolute;left:0;top:0;width:max(220px,min(46vw,1000px,calc((100svh - 360px)*1.7778)));aspect-ratio:16/9;cursor:pointer;transform-style:preserve-3d;will-change:transform;outline:none;--rad:26px}
+.dv-card:focus-visible{outline:2px solid var(--ink);outline-offset:8px}
+.dv-card::before{content:"";position:absolute;inset:-7% -4%;transform:translateZ(-40px);border-radius:44px;background:radial-gradient(closest-side,rgba(var(--acc,170,190,255),.3),rgba(var(--acc,170,190,255),.1) 60%,transparent);opacity:calc(1.2 - var(--dim,0)*1.6);pointer-events:none}
+.bw{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none}
+.bw i{position:absolute;top:0;bottom:0;display:block;backface-visibility:hidden;background-repeat:no-repeat;background-image:var(--img,none),var(--gr,none);background-size:var(--bgw) var(--bgh),var(--bgw) var(--bgh);background-position:var(--bx) var(--by),var(--bx) var(--by);
+ box-shadow:inset 0 0 0 999px rgba(5,5,5,var(--dim,0)),inset 0 1px 0 rgba(255,86,120,.3),inset 0 -1px 0 rgba(70,214,255,.3)}
+.bw i:first-child{border-radius:var(--rad) 0 0 var(--rad);box-shadow:inset 0 0 0 999px rgba(5,5,5,var(--dim,0)),inset 2px 0 0 rgba(255,86,120,.38),inset 0 1px 0 rgba(255,86,120,.3),inset 0 -1px 0 rgba(70,214,255,.3)}
+.bw i:last-child{border-radius:0 var(--rad) var(--rad) 0;box-shadow:inset 0 0 0 999px rgba(5,5,5,var(--dim,0)),inset -2px 0 0 rgba(70,214,255,.36),inset 0 1px 0 rgba(255,86,120,.3),inset 0 -1px 0 rgba(70,214,255,.3)}
+/* chromatic split: red-only and cyan-only copies of the art, shifted +d / -d, lightened over the edge strips (d grows toward the edge and in motion).
+   Kept inside each strip: an overhang would show raw colour at strip joints. Where the shift uncovers the card edge you get a thin red (left) / cyan (right) fringe. */
+.bw i.e{--d:calc(var(--ca,1.6px)*var(--ef,0))}
+.bw i:not(.e)::before,.bw i:not(.e)::after{display:none}
+.bw i.e::before,.bw i.e::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:lighten;border-radius:inherit;
+ opacity:calc(.8*var(--ef,0)*(1 - var(--dim,0)*1.5));background-repeat:no-repeat;background-size:var(--bgw) var(--bgh),100% 100%;background-blend-mode:multiply,normal}
+.bw i.e::before{background-image:var(--img),linear-gradient(#ff2a2a,#ff2a2a);background-position:calc(var(--bx) + var(--d)) var(--by),0 0}
+.bw i.e::after{background-image:var(--img),linear-gradient(#00e0ff,#00e0ff);background-position:calc(var(--bx) - var(--d)) var(--by),0 0}
+.bw i .sd{position:absolute;right:calc(var(--rad)*.8);top:calc(var(--rad)*.6);width:8px;height:8px;border-radius:50%;background:var(--status,#747f8d);box-shadow:0 0 10px var(--status,#747f8d)}
+@media(max-width:760px){
+ .dv-card{width:max(220px,min(78vw,calc((100svh - 400px)*1.7778)))}
+ .cy .dv-top{top:76px;left:18px;right:18px}.cy .dv-bottom{left:18px;right:18px;bottom:60px}
+ .dv-top{align-items:flex-start;flex-direction:column;gap:14px}
+ .dv-bottom{align-items:flex-start;flex-direction:column;gap:20px}
+ .dv-controls{width:100%;align-items:flex-start;flex-direction:row;justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){
+ .jn{height:auto!important}.jn-st{position:relative;height:auto;min-height:0}
+ .jn-st .hero{position:relative;height:100svh}.jn-bg,.cy-lit,.dv-dots,.dv-count,.cy .dv-bottom,.jn-mk{display:none}
+ .cy,.cy-lay{position:relative;opacity:1!important;background:#050505}
+ .cy .dv-shell{position:relative;padding:90px clamp(22px,5vw,84px) 70px}.cy .dv-top{position:relative;inset:auto;left:auto;right:auto}
+ .cy .dv-stage{position:relative;perspective:none;margin-top:28px}
+ .cy-world,.dv-deck{position:relative;left:auto;top:auto;width:auto;height:auto;transform:none!important}
+ .dv-deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+ .dv-card{position:relative;width:100%;transform:none!important;opacity:1!important}
+ #about{margin-top:0!important}#about .wrap{transform:none}
+}
+/* hero -> team transition */
+#a{will-change:transform,filter,opacity}
+.hero .t{transform:scale(calc(1 + var(--p,0)*.18));filter:blur(calc(var(--p,0)*7px))}
+.ghost{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0;font:700 clamp(120px,30vw,520px)/.8 var(--gro);letter-spacing:-.06em;color:rgba(255,255,255,.34);mix-blend-mode:screen;will-change:transform,opacity,filter}
+/* developers -> about transition */
+.flare{position:absolute;inset:0;pointer-events:none;opacity:0;mix-blend-mode:screen;background:radial-gradient(ellipse 62% 52% at 50% 50%,rgba(240,244,255,.9),rgba(240,244,255,.25) 45%,transparent 72%)}
+#about::before{display:block;height:46vh;opacity:calc(1 - var(--ab,1))}
+#about .wrap{opacity:var(--abo,1);transform:translateY(calc((1 - var(--ab,1))*9svh))}
