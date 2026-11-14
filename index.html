@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kurisu | Antinuke, raid protection and moderation for Discord</title>
+<meta name="description" content="Kurisu is a Discord antinuke, raid protection and moderation bot. Documentation, commands and bot info.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@700&family=Instrument+Sans:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js","lock")</script>
+</head>
+<body>
+<div id="ld" role="button" tabindex="0" aria-label="Enter site"><canvas aria-hidden="true"></canvas></div>
+
+<header>
+  <a class="logo d" href="#top" aria-label="Kurisu home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4v7l7-7h5l-8 9 8 9h-5l-7-7v7H4z" fill="currentColor"/></svg>KURISU</a>
+  <nav aria-label="Primary"><a href="#developers">Developers</a><a href="#about">About</a><a href="#docs">Docs</a><a href="#commands">Commands</a><a href="#support">Support</a></nav>
+  <div class="hr"><a class="pill" data-invite href="#">Add to Discord</a><button class="mb" type="button" id="mb" aria-expanded="false" aria-controls="mn">Menu</button></div>
+</header>
+<nav id="mn" aria-label="Mobile"><a href="#developers">Developers</a><a href="#about">About</a><a href="#docs">Docs</a><a href="#commands">Commands</a><a href="#support">Support</a><a data-invite href="#">Add to Discord</a></nav>
+
+<main>
+
+<div class="jn" id="journey">
+ <div class="jn-st" id="jnSt">
+<section class="s hero" id="top">
+  <canvas id="a" aria-hidden="true"></canvas>
+  <div class="t">
+    <h1 class="d">Kurisu</h1>
+    <p><b>Stops a nuke before it spreads.</b>Antinuke, raid protection and moderation for your Discord server. Move your cursor through the logo.</p>
+  </div>
+  <span class="sc">Scroll</span>
+</section>
+  <div class="jn-bg" id="jnBg" aria-hidden="true"></div>
+  <section class="cy" id="cy" aria-labelledby="dvh">
+   <div class="cy-lay" id="cyLay">
+    <div class="dv-stage" id="dvStage" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Kurisu developers. Scroll or use the arrow keys to browse.">
+     <div class="cy-world" id="cyWorld"><div class="dv-deck" id="dvDeck"></div></div>
+    </div>
+    <div class="cy-lit" aria-hidden="true"></div>
+    <div class="dv-shell" id="cyUi">
+  <div class="dv-top">
+   <div><p class="dv-n">02 / THE TEAM</p><h2 class="d" id="dvh">Developers</h2></div>
+   <span class="dv-conn" id="dvConn" role="status" data-s="idle"><i></i><span>Connecting to Lanyard</span></span>
+  </div>
+     <button class="dv-arrow dv-prev" type="button" id="dvPrev" aria-label="Previous developer">&#8592;</button>
+     <button class="dv-arrow dv-next" type="button" id="dvNext" aria-label="Next developer">&#8594;</button>
+  <div class="dv-bottom">
+   <div class="dv-info" id="dvInfo">
+    <div class="dv-who"><span class="dv-av" id="dvAv"></span><div><div class="dv-meta" id="dvMeta"></div><h3 class="dv-name d" id="dvName"></h3></div></div>
+    <p class="dv-sub" id="dvSub"></p>
+   </div>
+   <div class="dv-controls"><div class="dv-dots" id="dvDots"></div><div class="dv-count" id="dvCount"></div></div>
+  </div>
+     <p class="sr" id="dvSr" aria-live="polite"></p>
+    </div>
+   </div>
+  </section>
+ </div>
+ <i class="jn-mk" id="developers" aria-hidden="true"></i>
+</div>
+
+<section class="s light rl" id="about">
+  <svg class="outl" viewBox="-2 -2 28 28" fill="none" stroke="#111" stroke-width=".07" aria-hidden="true"><path d="M4 3h4v7l7-7h5l-8 9 8 9h-5l-7-7v7H4z" stroke-linejoin="round"/><g stroke-dasharray=".3 .3" opacity=".55"><rect x="4" y="3" width="16" height="18"/><path d="M12-2v28M-2 12h28"/><circle cx="12" cy="12" r="13"/></g><path d="M4 23.2h16M4 22.7v1M20 22.7v1"/></svg>
+  <div class="wrap">
+    <div class="sh"><span>03 / About</span><span>What Kurisu does</span></div>
+    <p class="stm d rv"><span class="ln">Stops a nuke</span><span class="ln">before it spreads.</span></p>
+    <p class="ab-lead rv">Kurisu watches your server’s audit log, punishes whoever is destroying it, and puts back what they removed. Every panel is a Discord Components V2 card, with grey buttons and red icons only.</p>
+    <div class="facts">
+      <div class="rv"><b>Antinuke with 28 modules</b><span>Channels, roles, bans, kicks, webhooks, bots, mentions, permissions, vanity URL and more. Each module has its own limit, time window and punishment.</span></div>
+      <div class="rv"><b>Nuke Guard</b><span>Counts destructive actions across all modules. Three in 10 seconds gets the executor kicked, even when each module stays under its own limit.</span></div>
+      <div class="rv"><b>24-hour nuke watch</b><span>A kicked executor is banned on sight if they act, send a message or rejoin within 24 hours. The watch survives restarts.</span></div>
+      <div class="rv"><b>Raid protection</b><span>Four levels (normal, elevated, high, lockdown) that react to join speed and new accounts. Lockdown raises verification, blocks sending and pauses invites.</span></div>
+      <div class="rv"><b>Whitelist for users and roles</b><span>Four levels with per-module scopes. Administrator permission alone gives no immunity.</span></div>
+      <div class="rv"><b>Recovery</b><span>Restores deleted channels and roles, reverts changes, and removes rogue webhooks, bots and invites.</span></div>
+      <div class="rv"><b>Moderation</b><span>Bans, kicks, timeouts, warnings, cases, purge, locks and slowmode, with full case history.</span></div>
+      <div class="rv"><b>Slash and prefix commands</b><span>Every command also works as a text command. The default prefix is <code>!</code> and each server can change it.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="s rd" id="docs">
+  <div class="wrap">
+  <div class="sh"><span>04 / Docs</span><span>Setup and reference</span></div>
+  <h2 class="d rv">Documentation</h2>
+  <div class="docs">
+    <div class="doc rv"><h3>Set up Kurisu</h3>
+      <ul><li>Add the bot with the button at the top of the page.</li><li>Drag its role near the top of your role list. Discord’s hierarchy decides whether Kurisu can punish, strip roles or restore anything.</li><li>Run <code>/security</code> to open the Security Center, then <code>Diagnostics</code> to check permissions, audit-log access and log channels.</li></ul></div>
+    <div class="doc rv"><h3>Permissions Kurisu needs</h3>
+      <p>The invite link requests the permissions Kurisu uses. The important ones are View Audit Log, Manage Roles, Manage Channels, Manage Webhooks, Ban Members, Kick Members, Moderate Members, Manage Guild and Manage Messages.</p></div>
+    <div class="doc rv"><h3>How antinuke works</h3>
+      <ul><li>Kurisu reads audit log entries and ignores entries without an executor.</li><li>Each module counts actions in a sliding window per executor.</li><li>Past the limit, Kurisu applies the punishment (strip, quarantine, timeout, kick or ban) and reverts the damage.</li><li>Two incidents in 24 hours escalate to a ban by default. Set it to 0 to turn escalation off.</li></ul></div>
+    <div class="doc rv"><h3>Who is exempt</h3>
+      <p>The server owner, bot owners and Kurisu itself are always exempt. Everyone else needs a whitelist entry.</p>
+      <ul><li><code>trusted_admin</code> Trusted Administrator</li><li><code>trusted_mod</code> Trusted Moderator</li><li><code>bypass</code> Security Bypass</li><li><code>bot</code> Trusted Bot</li></ul></div>
+    <div class="doc rv"><h3>Raid protection</h3>
+      <p>By default 5 joins in 10 seconds raises the level to elevated, 10 to high and 20 to lockdown. Accounts younger than 7 days count as new. Lockdown lasts 15 minutes. Kurisu never mass-bans during a raid. Use <code>/raid lockdown</code> and <code>/raid unlock</code> to control it manually.</p></div>
+    <div class="doc rv"><h3>Prefix commands</h3>
+      <p>Type the prefix before any command, for example <code>!ban @member spam</code> or <code>!timeout @member 10m spam</code>. Change it with <code>/prefix</code>. Text commands use the same permission and hierarchy checks as slash commands.</p></div>
+    <div class="doc rv"><h3>Logging</h3>
+      <p>Set a channel per log type with <code>/logs set</code>. Types: antinuke, raid, moderation, member, message, channel, role, voice and config. Message logs never include message content.</p></div>
+    <div class="doc rv"><h3>What Discord does not allow</h3>
+      <ul><li>Messages in a deleted channel cannot be recovered.</li><li>Restored channels and roles get new IDs.</li><li>Members of a deleted role are not reassigned.</li><li>Server icon, banner and vanity URL cannot be restored.</li></ul></div>
+  </div>
+  </div>
+</section>
+
+<section class="s light rl" id="commands">
+  <div class="wrap">
+  <div class="sh"><span>05 / Commands</span><span>Select a row to copy</span></div>
+  <h2 class="d">Commands</h2>
+  <p class="lead">Select a command to copy it. Replace <code>/</code> with your server prefix to use it as a text command.</p>
+  <div class="tools"><input id="q" type="search" placeholder="Search commands" aria-label="Search commands"><div id="chips" class="tools" style="margin:0"></div></div>
+  <div id="cmds"></div>
+  <p id="none" hidden>No command matches that search.</p>
+  </div>
+</section>
+
+<section class="s rd" id="support">
+  <div class="wrap">
+  <div class="sh"><span>06 / Support</span><span>Discord</span></div>
+  <div class="sup">
+    <h2 class="d rv">Need help?</h2>
+    <div><p class="lead rv">Run <code>/help</code> in Discord to open the Command Center, or join the support server.</p>
+    <a class="pill cta rv" data-support href="#">Join the support server</a></div>
+  </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="fl">
+    <p>Antinuke, raid protection and moderation for Discord.</p>
+    <div class="cols">
+      <div class="fg"><b>Kurisu</b><a href="#top">Top</a><a href="#developers">Developers</a><a href="#about">About</a><a href="#docs">Docs</a></div>
+      <div class="fg"><b>Use</b><a href="#commands">Commands</a><a data-invite href="#">Add to Discord</a><a data-support href="#">Support</a><a data-site href="#">Website</a></div>
+    </div>
+  </div>
+  <div class="big d" aria-hidden="true">KURISU</div>
+  <div class="cp"><span>&copy;2026 Kurisu</span><span>防衛システム</span></div>
+</footer>
+
+<div class="bar">
+  <div class="m"><i>&#9679;</i><span>Run /help in Discord to open the Command Center.</span></div>
+  <div class="r"><a class="u" data-invite href="#">Add to Discord</a><a class="pill" data-support href="#">Support server</a></div>
+</div>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
